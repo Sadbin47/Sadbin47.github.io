@@ -466,7 +466,7 @@
         run(args) {
           const rest = args.join(' ');
           if (rest === 'reset --hard') {
-            row('HEAD is now at 3.67/4.00 “Someday, it will happen.”', 'ok');
+            row('HEAD is now at 5c4d1e7 “Someday, it will happen.”', 'ok');
             setTimeout(() => goTo('home'), 600);
           } else if (rest === 'status') {
             row("On branch main. Your portfolio is up to date with 'origin/main'.");
