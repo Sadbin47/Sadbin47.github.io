@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>404 — Page not found · Md. Sadbin Hossain</title>
+  <meta name="robots" content="noindex">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#11111b">
+  <!-- GitHub Pages serves this file for any missing path, so every URL here is root-absolute. -->
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400..700&family=JetBrains+Mono:wght@400..700&display=swap">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script>
+    (function () {
+      var d = document.documentElement, t = null;
+      d.className = d.className.replace('no-js', 'js');
+      try { t = localStorage.getItem('s4d-theme'); } catch (e) {}
+      if (t !== 'mocha' && t !== 'latte') {
+        t = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'latte' : 'mocha';
+      }
+      d.setAttribute('data-theme', t);
+    })();
+  </script>
+</head>
+<body>
+  <div class="wallpaper" aria-hidden="true">
+    <div class="blob blob--a"></div>
+    <div class="blob blob--b"></div>
+    <div class="blob blob--c"></div>
+  </div>
+
+  <main class="notfound">
+    <div class="container notfound__inner">
+      <div class="window is-focused notfound__win">
+        <div class="window__bar"><span class="window__app">kitty</span><span class="window__title">sadbin@s4d: ~</span></div>
+        <div class="term">
+          <p><span class="ps1">sadbin@s4d</span> <span class="ps1__path">~</span> <span class="ps1__sym">❯</span> cd <span class="js-path">/missing-page</span></p>
+          <p class="term__row--err">bash: cd: <span class="js-path">/missing-page</span>: No such file or directory</p>
+          <p class="term__row--muted"># exit code 404 — this page doesn’t exist, or it has moved.</p>
+          <p><span class="ps1">sadbin@s4d</span> <span class="ps1__path">~</span> <span class="ps1__sym">❯</span> <span class="cursor" aria-hidden="true"></span></p>
+        </div>
+      </div>
+      <h1 class="notfound__title">404 · page not found</h1>
+      <p class="notfound__text">That path isn’t part of this site. Head back home and pick another workspace.</p>
+      <div class="hero__cta">
+        <a class="btn btn--primary" href="/">cd ~ · back home</a>
+        <a class="btn" href="/#projects">Projects</a>
+        <a class="btn" href="/#contact">Contact</a>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    (function () {
+      var path = window.location.pathname || '/';
+      var nodes = document.querySelectorAll('.js-path');
+      for (var i = 0; i < nodes.length; i++) nodes[i].textContent = path;
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Md. Sadbin Hossain — Student Researcher · CSE @ AIUB</title>
+  <meta name="description" content="Md. Sadbin Hossain is a CSE undergraduate and student researcher at AIUB working on efficient, explainable deep learning for medical imaging and privacy-aware healthcare systems. Builder of ResQRoute and the s4d Linux toolkit.">
+  <meta name="author" content="Md. Sadbin Hossain">
+  <link rel="canonical" href="https://sadbin47.github.io/">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#11111b" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#dce0e8" media="(prefers-color-scheme: light)">
+
+  <!-- Social previews -->
+  <meta property="og:type" content="profile">
+  <meta property="og:site_name" content="Md. Sadbin Hossain">
+  <meta property="og:title" content="Md. Sadbin Hossain — Student Researcher">
+  <meta property="og:description" content="Efficient, explainable deep learning for medical imaging and privacy-aware healthcare systems. CSE undergraduate at AIUB, Dhaka.">
+  <meta property="og:url" content="https://sadbin47.github.io/">
+  <meta property="og:image" content="https://sadbin47.github.io/assets/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Md. Sadbin Hossain — student researcher, CSE at AIUB">
+  <meta property="profile:first_name" content="Sadbin">
+  <meta property="profile:last_name" content="Hossain">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Md. Sadbin Hossain — Student Researcher">
+  <meta name="twitter:description" content="Efficient, explainable deep learning for medical imaging and privacy-aware healthcare systems.">
+  <meta name="twitter:image" content="https://sadbin47.github.io/assets/img/og.png">
+
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400..700&family=JetBrains+Mono:ital,wght@0,400..700;1,400..700&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <script>
+    /* Runs before first paint: pick the theme (saved choice, else system) so there is no flash. */
+    (function () {
+      var d = document.documentElement, t = null;
+      d.className = d.className.replace('no-js', 'js reveal');
+      try { t = localStorage.getItem('s4d-theme'); } catch (e) {}
+      if (t !== 'mocha' && t !== 'latte') {
+        t = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'latte' : 'mocha';
+      }
+      d.setAttribute('data-theme', t);
+      /* If main.js never runs (offline, blocked), never leave content hidden. */
+      setTimeout(function () { if (!window.__s4d) d.classList.remove('reveal'); }, 2500);
+    })();
+  </script>
+  <script src="assets/js/main.js" defer></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Md. Sadbin Hossain",
+    "url": "https://sadbin47.github.io/",
+    "email": "mailto:23-55187-3@student.aiub.edu",
+    "jobTitle": "Undergraduate Student Researcher",
+    "affiliation": {
+      "@type": "CollegeOrUniversity",
+      "name": "American International University-Bangladesh (AIUB)"
+    },
+    "address": { "@type": "PostalAddress", "addressLocality": "Dhaka", "addressCountry": "BD" },
+    "knowsAbout": [
+      "Efficient deep learning", "Knowledge distillation", "Vision Transformers",
+      "Medical image analysis", "Explainable AI", "Domain shift",
+      "Federated learning", "Post-quantum cryptography", "Electronic health records", "Arch Linux"
+    ],
+    "sameAs": [
+      "https://github.com/Sadbin47",
+      "https://www.linkedin.com/in/sadbin-hossain-471692353/"
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <!-- Icon sprite: every icon on the page is a <use> of one of these symbols.
+       Icons: Lucide (ISC License, https://lucide.dev). Brand marks: Simple Icons (CC0). -->
+  <svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.125 2.062 2.062 0 0 1 0 4.125zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></g></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V3"/><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/></g></symbol>
+    <symbol id="i-arrow-down" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></g></symbol>
+    <symbol id="i-arrow-up" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></g></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></g></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="14" height="14" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></g></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></g></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></g></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></g></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></g></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></g></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></g></symbol>
+  </svg>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- The "wallpaper": soft drifting colour fields, a dot grid and film grain. Decorative only. -->
+  <div class="wallpaper" aria-hidden="true">
+    <div class="blob blob--a"></div>
+    <div class="blob blob--b"></div>
+    <div class="blob blob--c"></div>
+  </div>
+
+  <!-- ============ Waybar ============ -->
+  <header class="bar">
+    <nav class="island ws" aria-label="Sections">
+      <ol>
+        <li><a href="#home" aria-current="true"><span class="ws__num">1</span><span class="ws__label">home</span></a></li>
+        <li><a href="#about"><span class="ws__num">2</span><span class="ws__label">about</span></a></li>
+        <li><a href="#research"><span class="ws__num">3</span><span class="ws__label">research</span></a></li>
+        <li><a href="#projects"><span class="ws__num">4</span><span class="ws__label">projects</span></a></li>
+        <li><a href="#stack"><span class="ws__num">5</span><span class="ws__label">stack</span></a></li>
+        <li><a href="#contact"><span class="ws__num">6</span><span class="ws__label">contact</span></a></li>
+      </ol>
+    </nav>
+
+    <p class="island bar__title" aria-hidden="true"><span id="bar-title">fastfetch — ~</span></p>
+
+    <div class="island mods">
+      <a class="mod mod--status" href="#contact"><span class="mod__dot" aria-hidden="true"></span>open to research roles</a>
+      <span class="mod mod--clock" title="Local time in Dhaka (UTC+6)">
+        <svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg>
+        <span class="sr-only">Local time in Dhaka:</span>
+        <time id="clock">Dhaka</time>
+      </span>
+      <button class="mod mod--theme" id="theme-toggle" type="button" aria-label="Switch theme">
+        <svg class="icon icon--sun" aria-hidden="true"><use href="#i-sun"/></svg>
+        <svg class="icon icon--moon" aria-hidden="true"><use href="#i-moon"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ 1 · Home ============ -->
+    <section id="home" class="hero" aria-labelledby="hero-title" data-title="fastfetch — ~" tabindex="-1">
+      <div class="container hero__grid">
+        <div class="hero__intro">
+          <p class="pill"><span class="pill__dot" aria-hidden="true"></span>Open to student-researcher roles &amp; collaborations</p>
+          <h1 id="hero-title" class="hero__name">Md. Sadbin<br>Hossain<span class="hero__dot">.</span></h1>
+          <p class="hero__lead">I build <em>efficient, explainable</em> deep learning for medical imaging — and <em>privacy-aware</em> systems for the health data behind it.</p>
+          <p class="hero__sub">CSE undergraduate at AIUB, Dhaka, with four manuscripts in progress under faculty supervision — one under review at ICCIT&nbsp;2026. Off the clock, I write shell tools for Arch&nbsp;Linux.</p>
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="#research">See my research <svg class="icon" aria-hidden="true"><use href="#i-arrow-down"/></svg></a>
+            <a class="btn" href="CV.pdf" download="Md-Sadbin-Hossain-CV.pdf"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg> Download CV</a>
+          </div>
+          <ul class="socials">
+            <li><a href="https://github.com/Sadbin47" target="_blank" rel="me noopener" aria-label="GitHub (opens in a new tab)"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg></a></li>
+            <li><a href="https://www.linkedin.com/in/sadbin-hossain-471692353/" target="_blank" rel="me noopener" aria-label="LinkedIn (opens in a new tab)"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg></a></li>
+            <li><a href="mailto:23-55187-3@student.aiub.edu" aria-label="Email 23-55187-3@student.aiub.edu"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></a></li>
+          </ul>
+        </div>
+
+        <!-- The terminal is real: type `help`. -->
+        <div class="window term-win" data-window>
+          <div class="window__bar">
+            <span class="window__app">kitty</span>
+            <span class="window__title">sadbin@s4d: ~</span>
+          </div>
+          <div class="term" id="term">
+            <p class="term__line" aria-hidden="true"><span class="ps1">sadbin@s4d</span> <span class="ps1__path">~</span> <span class="ps1__sym">❯</span> <span class="typed">fastfetch</span></p>
+            <div class="ff" id="ff">
+              <svg class="ff__logo" viewBox="0 0 280 120" aria-hidden="true" focusable="false">
+                <defs>
+                  <linearGradient id="logo-grad" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0" class="stop-a"/>
+                    <stop offset="1" class="stop-b"/>
+                  </linearGradient>
+                </defs>
+                <path class="ff__logo-blocks" d="M0 0h70v20h-70zM100 0h20v20h-20zM150 0h20v20h-20zM200 0h60v20h-60zM0 20h20v20h-20zM100 20h20v20h-20zM150 20h20v20h-20zM200 20h20v20h-20zM250 20h20v20h-20zM0 40h70v20h-70zM100 40h70v20h-70zM200 40h20v20h-20zM250 40h20v20h-20zM50 60h20v20h-20zM150 60h20v20h-20zM200 60h20v20h-20zM250 60h20v20h-20zM0 80h70v20h-70zM150 80h20v20h-20zM200 80h60v20h-60z"/>
+                <path class="ff__logo-lines" d="M70 10H75M75 10V20M120 10H125M125 10V20M170 10H175M175 10V20M260 10H265M265 10V20M25 30H30M25 30V40M30 30H40M40 30H50M50 30H60M60 30H70M70 30H75M75 20V30M125 20V40M175 20V40M225 30H230M225 30V40M230 30H240M240 30H250M270 30H275M275 30V40M70 50H75M75 50V60M175 40V60M225 40V60M275 40V60M5 70H10M5 60V70M10 70H20M20 70H30M30 70H40M40 70H50M75 60V80M105 70H110M105 60V70M110 70H120M120 70H130M130 70H140M140 70H150M175 60V80M225 60V80M275 60V80M75 80V100M175 80V100M265 90H270M265 90V100M270 90H275M275 80V90M5 110H10M5 100V110M10 110H20M20 110H30M30 110H40M40 110H50M50 110H60M60 110H70M70 110H75M75 100V110M155 110H160M155 100V110M160 110H170M170 110H175M175 100V110M205 110H210M205 100V110M210 110H220M220 110H230M230 110H240M240 110H250M250 110H260M260 110H265M265 100V110"/>
+              </svg>
+              <div class="ff__info">
+                <p class="ff__host" aria-hidden="true"><span>sadbin</span>@<span>s4d</span></p>
+                <p class="ff__rule" aria-hidden="true">──────────────</p>
+                <dl>
+                  <div><dt>OS</dt><dd>Arch Linux x86_64</dd></div>
+                  <div><dt>WM</dt><dd>Hyprland</dd></div>
+                  <div><dt>Terminal</dt><dd>kitty · bash</dd></div>
+                  <div><dt>Theme</dt><dd data-theme-label>Catppuccin Mocha</dd></div>
+                  <div><dt>Uni</dt><dd>AIUB · B.Sc. CSE</dd></div>
+                  <div><dt>Semester</dt><dd>10th · CGPA 3.67</dd></div>
+                  <div><dt>Research</dt><dd>Efficient &amp; explainable DL</dd></div>
+                  <div><dt>Papers</dt><dd>4 in progress · 1 under review</dd></div>
+                  <div><dt>Locale</dt><dd>Dhaka, BD · UTC+6</dd></div>
+                </dl>
+                <p class="ff__colors" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></p>
+              </div>
+            </div>
+            <div class="term__out" id="term-out" role="log" aria-live="polite" aria-label="Terminal output"></div>
+            <form class="term__form" id="term-form" autocomplete="off">
+              <label class="sr-only" for="term-input">Terminal command. Type help to list commands.</label>
+              <span class="ps1" aria-hidden="true">sadbin@s4d <span class="ps1__path">~</span> <span class="ps1__sym">❯</span></span>
+              <input class="term__input" id="term-input" name="cmd" type="text" spellcheck="false" autocapitalize="off" enterkeyhint="send" placeholder="type help" aria-describedby="term-hint">
+              <button class="sr-only" type="submit">Run command</button>
+            </form>
+            <p class="term__hint" id="term-hint">Try <code>help</code>, <code>projects</code> or <code>sudo hire-me</code> · <kbd>/</kbd> to focus</p>
+          </div>
+        </div>
+      </div>
+      <a class="hero__hint" href="#about"><span class="hero__hint-key">press <kbd>2</kbd> or </span>scroll <svg class="icon" aria-hidden="true"><use href="#i-arrow-down"/></svg></a>
+    </section>
+
+    <!-- ============ 2 · About ============ -->
+    <section id="about" class="section" aria-labelledby="about-title" data-title="nvim — about.md" tabindex="-1">
+      <div class="container">
+        <header class="section__head">
+          <p class="section__cmd"><span class="section__prompt" aria-hidden="true">❯</span> cat about.md</p>
+          <h2 id="about-title">About</h2>
+        </header>
+
+        <div class="about">
+          <article class="window about__bio reveal" data-window aria-label="Biography">
+            <div class="window__bar"><span class="window__app">nvim</span><span class="window__title">about.md</span></div>
+            <div class="window__body prose">
+              <p class="lede">I’m a 10th-semester Computer Science &amp; Engineering student at American International University-Bangladesh, working where deep learning meets healthcare.</p>
+              <p>My manuscripts look at making medical-image classifiers lighter and easier to explain, checking whether they stay reliable when the data shifts, and sharing health records in a way that holds up against post-quantum threats. Across all of it, I care about evaluation that someone else can reproduce.</p>
+              <p>Outside the lab I live in the terminal. I’ve written an interactive Arch Linux installer, a self-hosted seedbox manager and my own Hyprland setup — all in shell. Shipping tools that partition real disks taught me to respect safe defaults, clear error messages and a confirmation before anything destructive. Good research needs the same discipline.</p>
+            </div>
+            <div class="vim-fill" aria-hidden="true"></div>
+            <div class="vim-status" aria-hidden="true">
+              <span class="vim-status__mode">NORMAL</span>
+              <span class="vim-status__file">about.md</span>
+              <span class="vim-status__meta">markdown · utf-8 · unix</span>
+              <span class="vim-status__pos">100%</span>
+            </div>
+          </article>
+
+          <article class="window about__edu reveal" data-window aria-labelledby="edu-title">
+            <div class="window__bar"><span class="window__app">edu</span><span class="window__title">~/aiub</span></div>
+            <div class="window__body">
+              <p class="eyebrow">Education</p>
+              <h3 id="edu-title" class="card__title">B.Sc. in Computer Science &amp; Engineering</h3>
+              <p class="muted small">American International University-Bangladesh (AIUB) · Dhaka</p>
+              <div class="edu__stats">
+                <p class="stat"><span class="stat__label">CGPA</span><span class="stat__value">3.67<span class="stat__unit">/ 4.00</span></span></p>
+                <p class="stat"><span class="stat__label">Semester</span><span class="stat__value">10th</span></p>
+                <p class="stat"><span class="stat__label">Graduation</span><span class="stat__value">2027<span class="stat__unit">expected</span></span></p>
+              </div>
+              <div class="meter meter--cgpa" role="img" aria-label="CGPA 3.67 out of 4.00"><span></span></div>
+            </div>
+          </article>
+
+          <article class="window about__now reveal" data-window aria-labelledby="now-title">
+            <div class="window__bar"><span class="window__app">tail</span><span class="window__title">-f now.log</span></div>
+            <div class="window__body">
+              <h3 id="now-title" class="eyebrow">Now</h3>
+              <ul class="now">
+                <li><span class="now__tag now__tag--review">review</span><span>Chest X-ray shift paper under review at <strong>ICCIT 2026</strong></span></li>
+                <li><span class="now__tag now__tag--internal">internal</span><span>DFU distillation and post-quantum EHR manuscripts with faculty supervisors</span></li>
+                <li><span class="now__tag now__tag--draft">drafting</span><span>Federated learning manuscript; experimenting with federated ViTs</span></li>
+                <li><span class="now__tag now__tag--ship">shipping</span><span>s4darc, s4dbox and s4dutil</span></li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="window about__interests reveal" data-window aria-labelledby="interests-title">
+            <div class="window__bar"><span class="window__app">grep</span><span class="window__title">-i interests</span></div>
+            <div class="window__body">
+              <h3 id="interests-title" class="eyebrow">Research interests</h3>
+              <ul class="chips">
+                <li>Efficient deep learning</li>
+                <li>Knowledge distillation</li>
+                <li>Vision Transformers</li>
+                <li>Medical image analysis</li>
+                <li>Explainable AI</li>
+                <li>Robustness &amp; domain shift</li>
+                <li>Federated learning</li>
+                <li>Post-quantum cryptography</li>
+                <li>Blockchain for EHR</li>
+                <li>Secure healthcare informatics</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 3 · Research ============ -->
+    <section id="research" class="section" aria-labelledby="research-title" data-title="zathura — ~/research" tabindex="-1">
+      <div class="container">
+        <header class="section__head">
+          <p class="section__cmd"><span class="section__prompt" aria-hidden="true">❯</span> ls -l ~/research</p>
+          <h2 id="research-title">Research</h2>
+          <p class="section__intro">Four manuscripts, each guided by a faculty supervisor. The tracker on every card shows where that paper is in the review pipeline.</p>
+        </header>
+
+        <ul class="kpis">
+          <li class="kpi reveal"><span class="kpi__value">4</span><span class="kpi__label">Manuscripts in progress</span></li>
+          <li class="kpi reveal"><span class="kpi__value">1</span><span class="kpi__label">Under conference review</span></li>
+          <li class="kpi reveal"><span class="kpi__value">4</span><span class="kpi__label">Faculty supervisors &amp; mentors</span></li>
+        </ul>
+
+        <!-- To update a paper: change its status text, data-status (review | internal | draft)
+             and which pipeline step has aria-current="step". Steps before it get class="is-done". -->
+        <ol class="papers">
+          <li>
+            <article class="window paper reveal" data-window data-status="review" aria-labelledby="paper-1">
+              <div class="window__bar"><span class="window__app">paper</span><span class="window__title">01 · medical imaging · robustness</span></div>
+              <div class="window__body">
+                <p class="status"><span class="status__dot" aria-hidden="true"></span>Under review · ICCIT 2026</p>
+                <h3 id="paper-1" class="paper__title">A Reproducible Lightweight Evaluation of Chest X-Ray Classification Under Cross-Dataset Shift</h3>
+                <p class="paper__desc">Do compact chest X-ray classifiers still hold up when they’re tested on a dataset they never saw in training? A lightweight, reproducible evaluation of cross-dataset shift.</p>
+                <p class="sr-only">Progress: stage 3 of 4, under review.</p>
+                <ol class="pipeline">
+                  <li class="is-done">Drafting</li>
+                  <li class="is-done">Internal review</li>
+                  <li aria-current="step">Under review</li>
+                  <li>Published</li>
+                </ol>
+                <dl class="paper__meta">
+                  <div><dt>Supervisor</dt><dd>Dr. Kamruddin Md. Nur</dd></div>
+                </dl>
+                <ul class="tags"><li>Chest X-ray</li><li>Dataset shift</li><li>Reproducibility</li><li>Efficient DL</li></ul>
+                <a class="text-link paper__link" href="https://github.com/Sadbin47/reproducible-lightweight-cxr-cross-dataset-shift" target="_blank" rel="noopener">Experiment code <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a>
+              </div>
+            </article>
+          </li>
+
+          <li>
+            <article class="window paper reveal" data-window data-status="internal" aria-labelledby="paper-2">
+              <div class="window__bar"><span class="window__app">paper</span><span class="window__title">02 · medical imaging · xai</span></div>
+              <div class="window__body">
+                <p class="status"><span class="status__dot" aria-hidden="true"></span>Supervisor review · submission planned</p>
+                <h3 id="paper-2" class="paper__title">Lightweight Explainable Diabetic Foot Ulcer Classification via Knowledge Distillation</h3>
+                <p class="paper__desc">Uses knowledge distillation to compress a large teacher network into a compact student for diabetic foot ulcer images — with explanations of what drives each prediction.</p>
+                <p class="sr-only">Progress: stage 2 of 4, internal review.</p>
+                <ol class="pipeline">
+                  <li class="is-done">Drafting</li>
+                  <li aria-current="step">Internal review</li>
+                  <li>Under review</li>
+                  <li>Published</li>
+                </ol>
+                <dl class="paper__meta">
+                  <div><dt>Supervisor</dt><dd>Dr. Muhammad Firoz Mridha</dd></div>
+                </dl>
+                <ul class="tags"><li>Knowledge distillation</li><li>Explainable AI</li><li>Diabetic foot ulcer</li><li>Lightweight models</li></ul>
+              </div>
+            </article>
+          </li>
+
+          <li>
+            <article class="window paper reveal" data-window data-status="internal" aria-labelledby="paper-3">
+              <div class="window__bar"><span class="window__app">paper</span><span class="window__title">03 · security · health records</span></div>
+              <div class="window__body">
+                <p class="status"><span class="status__dot" aria-hidden="true"></span>Faculty review · venue to be decided</p>
+                <h3 id="paper-3" class="paper__title">Post-Quantum Hybrid EHR Sharing Framework Using ML-KEM, ECC, Blockchain, and Off-Chain Storage</h3>
+                <p class="paper__desc">A hybrid framework for sharing electronic health records: post-quantum ML-KEM alongside classical ECC, with a blockchain and off-chain storage.</p>
+                <p class="sr-only">Progress: stage 2 of 4, internal review.</p>
+                <ol class="pipeline">
+                  <li class="is-done">Drafting</li>
+                  <li aria-current="step">Internal review</li>
+                  <li>Under review</li>
+                  <li>Published</li>
+                </ol>
+                <dl class="paper__meta">
+                  <div><dt>Supervisor</dt><dd>Md. Sajid Bin-Faisal</dd></div>
+                </dl>
+                <ul class="tags"><li>ML-KEM</li><li>ECC</li><li>Blockchain</li><li>EHR security</li></ul>
+              </div>
+            </article>
+          </li>
+
+          <li>
+            <article class="window paper reveal" data-window data-status="draft" aria-labelledby="paper-4">
+              <div class="window__bar"><span class="window__app">paper</span><span class="window__title">04 · distributed learning</span></div>
+              <div class="window__body">
+                <p class="status"><span class="status__dot" aria-hidden="true"></span>Early development</p>
+                <h3 id="paper-4" class="paper__title">Federated Learning for Healthcare/AI Applications <span class="paper__note">(working title)</span></h3>
+                <p class="paper__desc">Training models across institutions without pooling patient data. The title, scope and target journal are still being finalised.</p>
+                <p class="sr-only">Progress: stage 1 of 4, drafting.</p>
+                <ol class="pipeline">
+                  <li aria-current="step">Drafting</li>
+                  <li>Internal review</li>
+                  <li>Under review</li>
+                  <li>Published</li>
+                </ol>
+                <dl class="paper__meta">
+                  <div><dt>Mentor</dt><dd>Dr. Abdus Salam (AIUB)</dd></div>
+                </dl>
+                <ul class="tags"><li>Federated learning</li><li>Healthcare AI</li><li>Privacy</li></ul>
+              </div>
+            </article>
+          </li>
+        </ol>
+        <p class="fineprint research__asof">Status as of November 2026.</p>
+      </div>
+    </section>
+
+    <!-- ============ 4 · Projects ============ -->
+    <section id="projects" class="section" aria-labelledby="projects-title" data-title="lf — ~/projects" tabindex="-1">
+      <div class="container">
+        <header class="section__head">
+          <p class="section__cmd"><span class="section__prompt" aria-hidden="true">❯</span> ls ~/projects --sort=impact</p>
+          <h2 id="projects-title">Projects</h2>
+          <p class="section__intro">From offline disaster routing to the shell tools I run on my own machines.</p>
+        </header>
+
+        <!-- Featured: ResQRoute -->
+        <article class="window feature reveal" data-window aria-labelledby="rr-title">
+          <div class="window__bar">
+            <span class="window__app">android</span><span class="window__title">ResQRoute</span>
+            <span class="window__meta">hackathon · team project</span>
+          </div>
+          <div class="feature__grid">
+            <div class="feature__text">
+              <p class="eyebrow">Featured project</p>
+              <h3 id="rr-title" class="feature__title">ResQRoute</h3>
+              <p class="feature__lead">An offline-first Android app that routes people to flood shelters when mobile networks fail.</p>
+              <ul class="ticks">
+                <li><strong>No internet, by design.</strong> The road graph and shelter list ship inside the app — it never even requests the INTERNET permission.</li>
+                <li><strong>Flood-aware A*.</strong> Blocked roads drop out of the search; waterlogged ones cost more with depth, recency and how many reports agree.</li>
+                <li><strong>Phone-to-phone sync.</strong> Road reports spread over Bluetooth and Wi-Fi with Google Nearby Connections — no server, no SIM.</li>
+              </ul>
+              <dl class="figures">
+                <div><dt>Junctions</dt><dd>34,826</dd></div>
+                <div><dt>Directed edges</dt><dd>78,166</dd></div>
+                <div><dt>Shelters</dt><dd>91</dd></div>
+              </dl>
+              <ul class="tags"><li>Kotlin</li><li>Room</li><li>osmdroid</li><li>Nearby Connections</li><li>A* routing</li></ul>
+              <div class="feature__actions">
+                <a class="btn btn--primary btn--sm" href="https://github.com/Sadbin47/ResQRoute" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg> Source &amp; APK</a>
+              </div>
+              <p class="fineprint">Built with Team BUIA for <em>Hack for Humanity: Hack to Protect the Environment</em> (Round&nbsp;2), organised by The AI Collective Bangladesh Chapter with AIUB. The bundled map covers Feni district, Bangladesh.</p>
+            </div>
+
+            <figure class="feature__demo">
+              <div class="map" id="map"></div>
+              <figcaption class="map__ui">
+                <p class="map__status" id="map-status" aria-live="polite"></p>
+                <div class="map__controls">
+                  <button type="button" class="btn btn--sm" id="map-flood">Report a flooded road</button>
+                  <button type="button" class="btn btn--sm btn--ghost" id="map-reset">Reset</button>
+                </div>
+                <ul class="legend">
+                  <li><span class="legend__swatch legend__swatch--route" aria-hidden="true"></span>Safest route</li>
+                  <li><span class="legend__swatch legend__swatch--wet" aria-hidden="true"></span>Waterlogged, passable</li>
+                  <li><span class="legend__swatch legend__swatch--blocked" aria-hidden="true"></span>Blocked</li>
+                </ul>
+                <p class="map__note">A toy version of the routing idea: tap any road to cycle it <em>clear → waterlogged → blocked</em> and watch A* re-route to the nearest shelter. Not real map data.</p>
+              </figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <!-- The s4d toolkit -->
+        <section class="group toolkit" aria-labelledby="toolkit-title">
+          <div class="toolkit__head reveal">
+            <h3 id="toolkit-title" class="sub-title">The s4d toolkit</h3>
+            <p class="group__intro">Bare metal to a working desktop or server, written entirely in shell. Each tool runs on its own; <code>s4dutil</code> puts them behind a single menu.</p>
+            <ol class="flow">
+              <li>bare metal</li>
+              <li><code>s4darc</code> installs Arch</li>
+              <li><code>s4d_hyprland</code> desktop <span class="flow__or">or</span> <code>s4dbox</code> server</li>
+            </ol>
+          </div>
+
+          <div class="tools">
+            <article class="window tool reveal" data-window aria-labelledby="tool-arc">
+              <div class="window__bar">
+                <span class="window__app">bash</span><span class="window__title">s4darc.sh</span>
+                <span class="window__meta stars"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><span data-stars="s4darc">5</span><span class="sr-only"> GitHub stars</span></span>
+              </div>
+              <div class="window__body">
+                <h4 id="tool-arc" class="tool__name">s4darc</h4>
+                <p class="tool__desc">An interactive Arch Linux installer. No compiling, no dependencies — it runs straight from the official live ISO.</p>
+                <ul class="tool__list">
+                  <li>Guided partitioning, with a confirmation before anything destructive</li>
+                  <li>UEFI &amp; BIOS · GRUB or systemd-boot · your choice of kernel</li>
+                  <li>ext4, btrfs or xfs · locale, users and sudo configured for you</li>
+                </ul>
+                <div class="snippet">
+                  <code>bash &lt;(curl -fsSL https://raw.githubusercontent.com/<wbr>Sadbin47/<wbr>s4darc/<wbr>main/<wbr>s4darc.sh)</code>
+                  <button type="button" class="snippet__copy" data-copy="bash &lt;(curl -fsSL https://raw.githubusercontent.com/Sadbin47/s4darc/main/s4darc.sh)" data-copy-label="s4darc install command" aria-label="Copy the s4darc install command"><svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg></button>
+                </div>
+                <p class="tool__foot"><span class="lang lang--shell">Shell · MIT</span><a class="text-link" href="https://github.com/Sadbin47/s4darc" target="_blank" rel="noopener">Repository <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a></p>
+              </div>
+            </article>
+
+            <article class="window tool reveal" data-window aria-labelledby="tool-box">
+              <div class="window__bar">
+                <span class="window__app">bash</span><span class="window__title">s4dbox</span>
+                <span class="window__meta stars"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><span data-stars="s4dbox">2</span><span class="sr-only"> GitHub stars</span></span>
+              </div>
+              <div class="window__body">
+                <h4 id="tool-box" class="tool__name">s4dbox</h4>
+                <p class="tool__desc">A seedbox manager with a Bash TUI: install, monitor, tune and secure a media and torrent server from one menu.</p>
+                <ul class="tool__list">
+                  <li>qBittorrent, rTorrent, Jellyfin, Plex, Sonarr, Nextcloud and more</li>
+                  <li>Hardening built in: SSH, firewall and Fail2ban</li>
+                  <li>Tailscale, WireGuard, OpenVPN · optional Nginx reverse proxy</li>
+                </ul>
+                <div class="snippet">
+                  <code>curl -fsSL https://raw.githubusercontent.com/<wbr>Sadbin47/<wbr>s4dbox/<wbr>main/<wbr>install.sh | sudo bash</code>
+                  <button type="button" class="snippet__copy" data-copy="curl -fsSL https://raw.githubusercontent.com/Sadbin47/s4dbox/main/install.sh | sudo bash" data-copy-label="s4dbox install command" aria-label="Copy the s4dbox install command"><svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg></button>
+                </div>
+                <p class="tool__foot"><span class="lang lang--shell">Shell · MIT</span><a class="text-link" href="https://github.com/Sadbin47/s4dbox" target="_blank" rel="noopener">Repository <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a></p>
+              </div>
+            </article>
+
+            <article class="window tool reveal" data-window aria-labelledby="tool-hypr">
+              <div class="window__bar">
+                <span class="window__app">bash</span><span class="window__title">s4d_hyprland</span>
+                <span class="window__meta stars"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><span data-stars="s4d_hyprland">2</span><span class="sr-only"> GitHub stars</span></span>
+              </div>
+              <div class="window__body">
+                <h4 id="tool-hypr" class="tool__name">s4d_hyprland</h4>
+                <p class="tool__desc">A minimal, bloat-free Hyprland setup for Arch, with a gradient-styled TUI installer and live progress.</p>
+                <ul class="tool__list">
+                  <li>GPU auto-detection: NVIDIA, AMD, Intel and hybrid laptops</li>
+                  <li>Pick SDDM or Ly, Waybar or DankMaterialShell, Hyprlock ± Wlogout</li>
+                  <li>Catppuccin Mocha by default — the palette this site is built on</li>
+                </ul>
+                <div class="snippet">
+                  <code>bash &lt;(curl -fsSL https://raw.githubusercontent.com/<wbr>Sadbin47/<wbr>s4d_hyprland/<wbr>main/<wbr>install.sh)</code>
+                  <button type="button" class="snippet__copy" data-copy="bash &lt;(curl -fsSL https://raw.githubusercontent.com/Sadbin47/s4d_hyprland/main/install.sh)" data-copy-label="s4d_hyprland install command" aria-label="Copy the s4d_hyprland install command"><svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg></button>
+                </div>
+                <p class="tool__foot"><span class="lang lang--shell">Shell · CSS</span><a class="text-link" href="https://github.com/Sadbin47/s4d_hyprland" target="_blank" rel="noopener">Repository <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a></p>
+              </div>
+            </article>
+
+            <article class="window tool reveal" data-window aria-labelledby="tool-util">
+              <div class="window__bar"><span class="window__app">bash</span><span class="window__title">s4dutil</span></div>
+              <div class="window__body">
+                <h4 id="tool-util" class="tool__name">s4dutil</h4>
+                <p class="tool__desc">One command, one menu: the terminal hub for the whole toolset.</p>
+                <pre class="menu"><span class="menu__k">[1]</span> S4DArc  - Arch Linux Installer
+<span class="menu__k">[2]</span> S4DBox  - Seedbox Installer
+<span class="menu__k">[3]</span> S4DTune - BDIX / Seedbox Tuning <span class="menu__dim">(private)</span>
+<span class="menu__k">[0]</span> Exit</pre>
+                <ul class="tool__list">
+                  <li>Type-to-confirm guard: a disk is wiped only after you type <code>S4DUTIL</code></li>
+                </ul>
+                <div class="snippet">
+                  <code>curl -fsSL https://raw.githubusercontent.com/<wbr>Sadbin47/<wbr>s4dutil/<wbr>main/<wbr>install.sh | sudo bash</code>
+                  <button type="button" class="snippet__copy" data-copy="curl -fsSL https://raw.githubusercontent.com/Sadbin47/s4dutil/main/install.sh | sudo bash" data-copy-label="s4dutil install command" aria-label="Copy the s4dutil install command"><svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg></button>
+                </div>
+                <p class="tool__foot"><span class="lang lang--shell">Shell · MIT</span><a class="text-link" href="https://github.com/Sadbin47/s4dutil" target="_blank" rel="noopener">Repository <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a></p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- Research code -->
+        <section class="group" aria-labelledby="rcode-title">
+          <h3 id="rcode-title" class="sub-title reveal">Research code</h3>
+          <div class="cards cards--3">
+            <article class="window card reveal" data-window aria-labelledby="rc-1">
+              <div class="window__bar"><span class="window__app">python</span><span class="window__title">public</span></div>
+              <div class="window__body">
+                <h4 id="rc-1" class="card__title">Chest X-ray cross-dataset shift</h4>
+                <p class="card__repo">reproducible-lightweight-cxr-cross-dataset-shift</p>
+                <p class="card__desc">Experiment code behind the ICCIT 2026 chest X-ray submission.</p>
+                <p class="card__foot"><span class="lang lang--python">Python · Jupyter</span><a class="text-link" href="https://github.com/Sadbin47/reproducible-lightweight-cxr-cross-dataset-shift" target="_blank" rel="noopener">Repository <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a></p>
+              </div>
+            </article>
+
+            <article class="window card reveal" data-window aria-labelledby="rc-2">
+              <div class="window__bar"><span class="window__app">jupyter</span><span class="window__title">private</span></div>
+              <div class="window__body">
+                <h4 id="rc-2" class="card__title">Federated ViT research</h4>
+                <p class="card__desc">Notebooks for federated learning experiments with Vision Transformers.</p>
+                <p class="card__foot"><span class="lang lang--jupyter">Jupyter Notebook</span><span class="private"><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg> Private repo</span></p>
+              </div>
+            </article>
+
+            <article class="window card reveal" data-window aria-labelledby="rc-3">
+              <div class="window__bar"><span class="window__app">python</span><span class="window__title">private</span></div>
+              <div class="window__body">
+                <h4 id="rc-3" class="card__title">Healthcare encryption</h4>
+                <p class="card__desc">Python experiments in encryption for healthcare data.</p>
+                <p class="card__foot"><span class="lang lang--python">Python</span><span class="private"><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg> Private repo</span></p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- Coursework & team projects -->
+        <section class="group" aria-labelledby="course-title">
+          <h3 id="course-title" class="sub-title reveal">Coursework &amp; team projects</h3>
+          <div class="cards cards--3 cards--course">
+            <article class="window card reveal" data-window aria-labelledby="cw-1">
+              <div class="window__bar">
+                <span class="window__app">c#</span><span class="window__title">.NET Framework</span>
+                <span class="window__meta stars"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><span data-stars="PharmacyManagementSystem">3</span><span class="sr-only"> GitHub stars</span></span>
+              </div>
+              <div class="window__body">
+                <h4 id="cw-1" class="card__title">Pharmacy Management System</h4>
+                <p class="card__desc">A Windows Forms desktop app for running a pharmacy: point-of-sale with live stock deduction, batch and expiry tracking, low-stock alerts and sales reports.</p>
+                <ul class="tags"><li>Role-based access</li><li>SQL Server</li><li>2NF schema</li><li>Layered architecture</li></ul>
+                <p class="card__foot"><span class="lang lang--csharp">C#</span><a class="text-link" href="https://github.com/Sadbin47/PharmacyManagementSystem" target="_blank" rel="noopener">Repository <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a></p>
+              </div>
+            </article>
+
+            <article class="window card reveal" data-window aria-labelledby="cw-2">
+              <div class="window__bar"><span class="window__app">c# · java</span><span class="window__title">built twice</span></div>
+              <div class="window__body">
+                <h4 id="cw-2" class="card__title">Travel Management System</h4>
+                <p class="card__desc">Booking, traveller, staff and trip management — built in C# Windows Forms with a MySQL database, and again in Java Swing with file-based persistence.</p>
+                <ul class="tags"><li>WinForms + MySQL</li><li>Java Swing</li><li>OOP</li><li>CRUD</li></ul>
+                <p class="card__foot"><span class="lang lang--java">C# · Java</span><a class="text-link" href="https://github.com/Sadbin47/TravelManagementSystem_JavaProject" target="_blank" rel="noopener">Java version <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a></p>
+              </div>
+            </article>
+
+            <article class="window card reveal" data-window aria-labelledby="cw-3">
+              <div class="window__bar"><span class="window__app">php</span><span class="window__title">web technologies · group 2</span></div>
+              <div class="window__body">
+                <h4 id="cw-3" class="card__title">JerseyTrack</h4>
+                <p class="card__desc">A role-based jersey inventory and sales platform with separate admin, manager, salesman and customer dashboards. Group project for the Web Technologies course.</p>
+                <ul class="tags"><li>PHP 8</li><li>MySQL via PDO</li><li>Hashed passwords</li><li>Session auth</li><li>MVC structure</li></ul>
+                <p class="card__foot"><span class="lang lang--php">PHP</span><a class="text-link" href="https://github.com/Sadbin47/WebTech_Summer25-26_Group_2" target="_blank" rel="noopener">Repository <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a></p>
+              </div>
+            </article>
+
+            <article class="window card card--wide reveal" data-window aria-labelledby="cw-4">
+              <div class="window__bar"><span class="window__app">c++</span><span class="window__title">opengl · glut</span></div>
+              <div class="window__body">
+                <!-- A tiny homage to the project's day/night cycle: it follows the site theme. -->
+                <div class="scene" aria-hidden="true">
+                  <svg viewBox="0 0 320 120" preserveAspectRatio="xMidYMid slice" focusable="false">
+                    <defs>
+                      <linearGradient id="sky-night" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#11111b"/><stop offset="1" stop-color="#313244"/></linearGradient>
+                      <linearGradient id="sky-day" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7dc4ff"/><stop offset="1" stop-color="#d7ecff"/></linearGradient>
+                      <mask id="moon-cut"><rect width="320" height="120" fill="#fff"/><circle cx="268" cy="23" r="11" fill="#000"/></mask>
+                    </defs>
+                    <rect class="scene__sky" width="320" height="120"/>
+                    <g class="scene__stars"><circle cx="24" cy="14" r="1"/><circle cx="58" cy="30" r=".8"/><circle cx="92" cy="12" r="1.2"/><circle cx="130" cy="26" r=".8"/><circle cx="168" cy="10" r="1"/><circle cx="200" cy="34" r=".9"/><circle cx="226" cy="16" r="1.1"/><circle cx="300" cy="44" r=".8"/><circle cx="148" cy="44" r=".7"/><circle cx="40" cy="46" r=".7"/></g>
+                    <circle class="scene__moon" cx="262" cy="28" r="12" mask="url(#moon-cut)"/>
+                    <g class="scene__sun"><circle cx="262" cy="28" r="20" opacity=".25"/><circle cx="262" cy="28" r="12"/></g>
+                    <g class="scene__clouds"><ellipse cx="70" cy="26" rx="18" ry="6"/><ellipse cx="84" cy="22" rx="12" ry="6"/><ellipse cx="190" cy="40" rx="16" ry="5"/><ellipse cx="202" cy="36" rx="10" ry="5"/></g>
+                    <g class="scene__city">
+                      <rect x="150" y="52" width="26" height="52"/><rect x="180" y="40" width="22" height="64"/><rect x="206" y="60" width="30" height="44"/><rect x="240" y="48" width="20" height="56"/><rect x="264" y="66" width="28" height="38"/><rect x="296" y="56" width="24" height="48"/>
+                    </g>
+                    <g class="scene__lit">
+                      <rect x="155" y="58" width="4" height="4"/><rect x="165" y="70" width="4" height="4"/><rect x="185" y="48" width="4" height="4"/><rect x="193" y="62" width="4" height="4"/><rect x="212" y="68" width="4" height="4"/><rect x="224" y="80" width="4" height="4"/><rect x="245" y="56" width="4" height="4"/><rect x="270" y="74" width="4" height="4"/><rect x="302" y="64" width="4" height="4"/>
+                    </g>
+                    <g class="scene__house">
+                      <path class="scene__roof" d="M26 72 66 48l40 24z"/>
+                      <rect class="scene__wall" x="32" y="70" width="68" height="34"/>
+                      <rect class="scene__wall scene__garage" x="100" y="78" width="36" height="26"/>
+                      <path class="scene__door-lines" d="M104 84h28M104 89h28M104 94h28M104 99h28"/>
+                      <rect class="scene__window" x="42" y="78" width="14" height="11"/>
+                      <rect class="scene__window" x="76" y="78" width="14" height="11"/>
+                      <rect class="scene__door" x="60" y="86" width="11" height="18"/>
+                    </g>
+                    <rect class="scene__road" y="104" width="320" height="16"/>
+                    <path class="scene__lane" d="M0 112h320"/>
+                    <g class="scene__car">
+                      <path class="scene__car-body" d="M2 108h40a3 3 0 0 0 3-3v-4l-7-2-5-6H14l-6 6-5 1a3 3 0 0 0-3 3v2a3 3 0 0 0 2 3z"/>
+                      <path class="scene__car-glass" d="M16 94h15l4 5H12z"/>
+                      <circle class="scene__wheel" cx="12" cy="108" r="4"/><circle class="scene__wheel" cx="35" cy="108" r="4"/>
+                      <path class="scene__beam" d="M45 102l30-6v14z"/>
+                    </g>
+                  </svg>
+                </div>
+                <h4 id="cw-4" class="card__title">Life of an Office Worker in a Modern Urban Area</h4>
+                <p class="card__desc">A 2D animated day in the life across nine connected scenes — city traffic, office interiors, rain and a day-to-night lighting cycle. Team project; its Home Module (scenes 1 and 9) is also published on its own.</p>
+                <p class="card__foot">
+                  <span class="lang lang--cpp">C++</span>
+                  <span class="card__links">
+                    <a class="text-link" href="https://github.com/Sadbin47/Life-of-A-Office-Worker-In-A-Modern-Urban-Area" target="_blank" rel="noopener">Repository <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a>
+                    <a class="text-link" href="https://github.com/Sadbin47/ComputerGraphicsProject_TheHomeModule" target="_blank" rel="noopener">Home Module <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a>
+                  </span>
+                </p>
+                <button type="button" class="scene__toggle" data-action="toggle-theme">Toggle day / night <span class="muted">(switches the site theme)</span></button>
+              </div>
+            </article>
+          </div>
+          <p class="more reveal">Plus coursework labs, competitive-programming practice and a few private experiments. <a class="text-link" href="https://github.com/Sadbin47?tab=repositories" target="_blank" rel="noopener">Browse every repository <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a></p>
+        </section>
+      </div>
+    </section>
+
+    <!-- ============ 5 · Stack ============ -->
+    <section id="stack" class="section" aria-labelledby="stack-title" data-title="nvim — ~/.config/s4d/stack.conf" tabindex="-1">
+      <div class="container">
+        <header class="section__head">
+          <p class="section__cmd"><span class="section__prompt" aria-hidden="true">❯</span> cat ~/.config/s4d/stack.conf</p>
+          <h2 id="stack-title">Stack &amp; experience</h2>
+        </header>
+
+        <div class="stack">
+          <article class="window reveal" data-window aria-labelledby="skills-title">
+            <div class="window__bar"><span class="window__app">nvim</span><span class="window__title">stack.conf</span><span class="window__meta">utf-8 · conf</span></div>
+            <div class="conf">
+              <h3 id="skills-title" class="sr-only">Technical skills</h3>
+              <!-- Add or remove skills here. Each row is a key with a list of values. -->
+              <dl class="conf__list">
+                <div class="conf__row">
+                  <dt><span class="conf__comment"># languages I write most</span><span class="conf__key">languages</span></dt>
+                  <dd><ul class="conf__vals"><li>C</li><li>C++</li><li>C#</li><li>Java</li><li>Python</li><li>Bash</li></ul></dd>
+                </div>
+                <div class="conf__row">
+                  <dt><span class="conf__comment"># also shipped projects in</span><span class="conf__key">also_used</span></dt>
+                  <dd><ul class="conf__vals"><li>Kotlin</li><li>PHP</li><li>SQL</li><li>JavaScript</li><li>TypeScript</li><li>HTML/CSS</li></ul></dd>
+                </div>
+                <div class="conf__row">
+                  <dt><span class="conf__comment"># systems</span><span class="conf__key">systems</span></dt>
+                  <dd><ul class="conf__vals"><li>Arch Linux</li><li>Linux CLI tooling</li><li>Hyprland</li><li>Windows</li></ul></dd>
+                </div>
+                <div class="conf__row">
+                  <dt><span class="conf__comment"># networking &amp; security — project experience</span><span class="conf__key">netsec</span></dt>
+                  <dd><ul class="conf__vals"><li>SSH</li><li>Firewall</li><li>Fail2ban</li><li>VPN &amp; remote access</li><li>Nginx reverse proxy</li></ul></dd>
+                </div>
+                <div class="conf__row">
+                  <dt><span class="conf__comment"># databases</span><span class="conf__key">databases</span></dt>
+                  <dd><ul class="conf__vals"><li>MySQL</li><li>SQL Server</li></ul></dd>
+                </div>
+                <div class="conf__row">
+                  <dt><span class="conf__comment"># research &amp; writing</span><span class="conf__key">research</span></dt>
+                  <dd><ul class="conf__vals"><li>LaTeX</li><li>Overleaf</li><li>Jupyter</li><li>Git</li><li>GitHub</li></ul></dd>
+                </div>
+              </dl>
+            </div>
+          </article>
+
+          <div class="stack__side">
+            <article class="window reveal" data-window aria-labelledby="log-title">
+              <div class="window__bar"><span class="window__app">journalctl</span><span class="window__title">-u sadbin --reverse</span></div>
+              <div class="window__body">
+                <h3 id="log-title" class="eyebrow">Milestones</h3>
+                <ol class="timeline">
+                  <li><time datetime="2027">2027</time><p><strong>B.Sc. in CSE</strong> — expected graduation from AIUB</p></li>
+                  <li><time datetime="2026">2026</time><p><strong>Submitted to ICCIT 2026</strong> — chest X-ray cross-dataset shift paper, now under review</p></li>
+                  <li><time datetime="2026">2026</time><p><strong>Released s4darc and s4dbox</strong> — open source, MIT-licensed</p></li>
+                </ol>
+              </div>
+            </article>
+
+            <article class="window reveal" data-window aria-labelledby="events-title">
+              <div class="window__bar"><span class="window__app">ls</span><span class="window__title">~/workshops ~/hackathons</span></div>
+              <div class="window__body">
+                <h3 id="events-title" class="eyebrow">Workshops &amp; hackathons</h3>
+                <ul class="events">
+                  <li>
+                    <p class="events__name">Code to Cloud: Practical DevOps with AWS</p>
+                    <p class="events__meta">Workshop · 2026</p>
+                    <p class="events__desc">Hosted by AIUB Computer Club in collaboration with Cloudly Infotech Limited.</p>
+                  </li>
+                  <li>
+                    <p class="events__name">Hack for Humanity: Hack to Protect the Environment</p>
+                    <p class="events__meta">Hackathon · Round 2 · 2026</p>
+                    <p class="events__desc">Built <a class="text-link" href="#projects">ResQRoute</a> with Team BUIA. Organised by The AI Collective Bangladesh Chapter with AIUB.</p>
+                  </li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 6 · Contact ============ -->
+    <section id="contact" class="section contact" aria-labelledby="contact-title" data-title="mail — new message" tabindex="-1">
+      <div class="container">
+        <div class="window contact__win reveal" data-window>
+          <div class="window__bar"><span class="window__app">mail</span><span class="window__title">new message — to: sadbin</span></div>
+          <div class="contact__body">
+            <div class="contact__main">
+              <p class="section__cmd"><span class="section__prompt" aria-hidden="true">❯</span> mail -s "Let’s collaborate" sadbin</p>
+              <h2 id="contact-title" class="contact__title">Let’s build something <span class="grad">reliable</span>.</h2>
+              <p class="contact__text">I’m looking for student-researcher roles and collaborations in efficient and explainable medical AI, federated learning and secure healthcare systems. Email is the fastest way to reach me.</p>
+              <div class="contact__actions">
+                <a class="btn btn--primary btn--lg contact__email" href="mailto:23-55187-3@student.aiub.edu"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg><span>23-55187-3@student.aiub.edu</span></a>
+                <button class="btn btn--lg" type="button" data-copy="23-55187-3@student.aiub.edu" data-copy-label="Email address"><svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg> Copy email</button>
+              </div>
+            </div>
+            <ul class="contact__links">
+              <li><a class="contact__link" href="https://www.linkedin.com/in/sadbin-hossain-471692353/" target="_blank" rel="me noopener"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg><span class="contact__k">LinkedIn</span><span class="contact__v">/in/sadbin-hossain</span></a></li>
+              <li><a class="contact__link" href="https://github.com/Sadbin47" target="_blank" rel="me noopener"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg><span class="contact__k">GitHub</span><span class="contact__v">@Sadbin47</span></a></li>
+              <li><button class="contact__link" type="button" data-copy="im_too_sad" data-copy-label="Discord username"><svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg><span class="contact__k">Discord</span><span class="contact__v">@im_too_sad · copy</span></button></li>
+              <li><p class="contact__link contact__link--static"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><span class="contact__k">Dhaka, Bangladesh</span><span class="contact__v" id="local-time">UTC+6</span></p></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__motto">“Someday, it will happen.”</p>
+      <p class="footer__meta">© <span data-year>2026</span> Md. Sadbin Hossain · Hand-built with HTML, CSS and a little JavaScript · Hosted on GitHub Pages</p>
+      <p class="footer__keys">Keys: <kbd>1</kbd>–<kbd>6</kbd> workspaces · <kbd>/</kbd> terminal · <kbd>T</kbd> theme</p>
+      <a class="footer__top" href="#home"><code>git reset --hard</code> <svg class="icon" aria-hidden="true"><use href="#i-arrow-up"/></svg><span class="sr-only">Back to top</span></a>
+    </div>
+  </footer>
+
+  <!-- swaync-style notifications -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
